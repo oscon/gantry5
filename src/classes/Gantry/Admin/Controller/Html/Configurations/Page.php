@@ -25,7 +25,7 @@ use Gantry\Framework\Atoms;
 use Gantry\Framework\Base\Gantry;
 use Gantry\Framework\Outlines;
 use Gantry\Framework\Services\ConfigServiceProvider;
-use RocketTheme\Toolbox\Blueprints\Blueprints;
+use RocketTheme\Toolbox\Blueprints\BlueprintSchema;
 use RocketTheme\Toolbox\Event\Event;
 use RocketTheme\Toolbox\File\YamlFile;
 use RocketTheme\Toolbox\ResourceLocator\UniformResourceLocator;
@@ -303,7 +303,7 @@ class Page extends HtmlController
     public function atomValidate($name)
     {
         // Load particle blueprints and default settings.
-        $validator = new Blueprints();
+        $validator = new BlueprintSchema();
         $validator->embed('options', $this->container['particles']->get($name));
 
         $blueprints = new BlueprintsForm($this->container['particles']->get($name));
